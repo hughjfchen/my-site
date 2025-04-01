@@ -1,0 +1,7 @@
+#+title: Welcome to Chen Jin Fen's site
+
+* Overview
+
+This is Chen Jin Fen's _website_ written with [[https://orgmode.org][Org Mode]]!
+
+First, let me show you my [[./Emacs.org][Emacs configuration]].
