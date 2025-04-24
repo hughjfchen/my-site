@@ -5,3 +5,11 @@
 This is Chen Jin Fen's _website_ written with [[https://orgmode.org][Org Mode]]!
 
 First, let me show you my [[./Emacs.org][Emacs configuration]].
+
+* Posts
+
+Following is the list of my posts:
+- post1
+- post2
+- [[./haskell.org][haskell]]
+- [[./java.org][java]]
