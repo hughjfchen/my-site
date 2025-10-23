@@ -1,0 +1,76 @@
+#+TITLE: Separate data interface and definition when designing type
+#+AUTHOR: Chen Jin Fen
+#+DATE: 2025-10-23
+
+* What is type design
+
+When you explore a domain, the first thing you should do is to create a domain vocabularies which can make it easier
+to communicate to others. Those vocabularies are domain model and usually represented with types. Types defines
+the characteristic of the domain and with a well-designed type model, you can go far far away down to the problem path.
+
+* What is data interface
+
+An interface means something you expose to the outside and can be used by others regardless of the implementation detains.
+
+* What is data definition
+
+Data definition is the real implementation which you should hide from others.
+
+* how to separate the data interface from the definition
+
+Take haskell for example, we can separate the data interface from its real definition with following design technique:
+
+** Data interface
+
+Following create an interface for data
+
+- Export a smart constructor instead of the data constructor(s). By this way, we hide the data real definitions
+  to the outside world
+- Not export the data constructor(s) will lose the feature for pattern matching. To regain this, we can define
+  some pattern synonyms and export them with the type
+- So smart constructor and pattern synonyms create an interface for the type and the type definition is completely
+  hidden from outside
+
+An example would be like following:
+#+begin_src haskell
+
+  {-# LANGUAGE GeneralizedNewtypeDeriving, PatternSynonyms #-}
+  module SomeModule
+  ( TypeConstructor(PatternSynonyms, unSomeType)
+  , SmartConstructor
+  , OtherInterface
+  ) where
+
+  newtype SomeType = SomeTypeInternalDataConstructor { unSomeType :: Text } deriving (Eq, Org, Show)
+
+  pattern SomeType :: Text -> SomeType
+  pattern SomeType t <- SomeTypeInternalDataConstructor { unSomeType = t }
+  ...
+
+#+end_src
+
+** Data definition
+
+By separating the interface, we have great flexibility to define our real data in the way we want.
+
+- We can parse the data within the smart constructor and make sure the data is correct(kind of dependent type
+  or refinement type)
+- We can even use view pattern to check the correctness with any function
+- We can change the data definition freely, like change the using data structure
+
+An example as following:
+
+#+begin_src haskell
+
+   {-# LANGUAGE GeneralizedNewtypeDeriving, ViewPatterns #-}
+   newtype SomeType = SomeTypeInternalDataConstructor { unSomeType :: Text } deriving (Eq, Org, Show)
+
+   viewPatternFunc :: SomeType -> Bool
+   viewPatternFunc st = (checkF1 st)
+                     && (checkF2 st)
+                     && (checkF3 st)
+   mkSomeType :: Text -> Either Text SomeType
+   mkSomeType t@(viewPatternFunc -> True) = Right $ SomeTypeInternalDataConstructor t
+   mkSomeType t@(_) = Left "Some error message"
+
+#+end_src
