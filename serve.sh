@@ -40,3 +40,4 @@ echo "$UPDATE_MY_SITE_TIMER" | sudo tee /etc/systemd/system/$TIMER_NAME
 sudo systemctl daemon-reload
 sudo systemctl enable $SERVICE_NAME
 sudo systemctl enable $TIMER_NAME
+sudo systemctl start $TIMER_NAME
