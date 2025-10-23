@@ -25,8 +25,8 @@ UPDATE_MY_SITE_TIMER="
 [Unit]
 
 [Timer]
-OnBootSec=6m
-OnUnitActiveSec=6m
+OnBootSec=1m
+OnUnitActiveSec=1m
 Unit=$SERVICE_NAME
 
 
