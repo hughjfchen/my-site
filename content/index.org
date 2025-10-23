@@ -13,3 +13,4 @@ Following is the list of my posts:
 - post2
 - [[./haskell.org][haskell]]
 - [[./java.org][java]]
+- [[./haskell-deriving-best-practice.org][haskell deriving best practice]]
