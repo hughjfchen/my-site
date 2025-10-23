@@ -6,7 +6,7 @@
 
 SERVICE_NAME="update-my-site.service"
 TIMER_NAME="update-my-site.timer"
-WD=$($PWD/$(dirname $0))
+WD=$PWD/$(dirname "$0")
 
 UPDATE_MY_SITE_SERVICE="
 [Unit]
