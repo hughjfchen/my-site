@@ -1,0 +1,24 @@
+#+TITLE: Haskell Deriving Best Practice
+#+AUTHOR: Chen Jin Fen
+#+DATE: 2025-10-23
+
+* Haskell Typeclass Instances
+
+Like it or hate it, you need to define a lot of typeclass instances when you define haskell types.
+The easy way to mitigate this annoying problem is to derive instances for the defined types.
+Following is some best practice for deriving instances.
+
+** What to derive
+
+The first question is what instances to derive for the defined type. Following is a simple guileline:
+
+- For any types, the Show, Typeable, Generic instance should be derived
+- For sum types, the Ord, Eq should be derived
+- For Read instance, it depends
+
+** Deriving stratege
+
+Next question is how to derive those instances for the defined types. Following summarize the guideline:
+
+- Use stock stratege to derive some standard type classes, like Show, Ord, Eq, Typeable and Generic
+- Use newtype stratege to derive instances for newtype definition
