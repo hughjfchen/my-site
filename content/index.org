@@ -9,8 +9,6 @@ First, let me show you my [[./Emacs.org][Emacs configuration]].
 * Posts
 
 Following is the list of my posts:
-- post1
-- post2
 - [[./haskell.org][haskell]]
 - [[./java.org][java]]
 - [[./haskell-deriving-best-practice.org][haskell deriving best practice]]
