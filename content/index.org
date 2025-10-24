@@ -15,3 +15,4 @@ Following is the list of my posts:
 - [[./java.org][java]]
 - [[./haskell-deriving-best-practice.org][haskell deriving best practice]]
 - [[./haskell-separate-data-interface-and-definition.org][haskell separate data interface and definition]]
+- [[./structure-your-shell-script-with-monad-stack.org][Structure your shell script with Monad stack]]
