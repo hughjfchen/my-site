@@ -32,7 +32,7 @@ Following create an interface for data
   hidden from outside
 
 An example would be like following:
-#+begin_src bash
+#+begin_src haskell
 
   {-# LANGUAGE GeneralizedNewtypeDeriving, PatternSynonyms #-}
   module SomeModule
