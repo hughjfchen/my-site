@@ -7,12 +7,12 @@
 Sometimes you will need some extra tools to build your project. For the *RecordDotSyntax* feature,
 you will need a ghc plugin or a pre processer to build.
 
-* Cabal build-tool-depends
+* Cabal =build-tool-depends=
 
 This flag is used by cabal, but looks like cabal only builds the library but won’t add the executable
 into the *PATH* during the following build process. There is a issue to track this:
 https://github.com/haskell/cabal/issues/8434
 
-* haskell.nix executableToolDepends
+* haskell.nix =executableToolDepends=
 
 There also is a issue track in *haskell.nix*: https://github.com/input-output-hk/haskell.nix/issues/839
