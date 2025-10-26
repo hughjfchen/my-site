@@ -15,3 +15,4 @@ Following is the list of my posts:
 - [[./haskell-separate-data-interface-and-definition.org][haskell separate data interface and definition]]
 - [[./structure-your-shell-script-with-monad-stack.org][Structure your shell script with Monad stack]]
 - [[./add-extra-build-tools-to-haskell.nix-project.org][Add Extra Build Tools to Haskell.nix Project]]
+- [[./nix-how-to-explore-nixpkgs-with-flake.org][Nix exploring nixpkgs with flake]]
