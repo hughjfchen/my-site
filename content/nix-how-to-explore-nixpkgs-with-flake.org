@@ -1,0 +1,12 @@
+#+TITLE: How to explore nix repl with nixpkgs and flake
+#+AUTHOR: Chen Jin Fen
+#+DATE: 2025-10-26
+
+* Explore =nix repl= with =nixpkgs= and flake
+
+With following command, you can explore the =nixpkgs= package set
+in a =repl= when you're enable =flake=:
+
+#+begin_src  bash
+nix repl --expr 'import <nixpkgs>{}'
+#+end_src
